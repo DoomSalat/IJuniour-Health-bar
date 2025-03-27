@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour, IDamagable
+public class Health : MonoBehaviour
 {
 	[SerializeField] private int _maxHealth = 100;
 
@@ -24,7 +24,7 @@ public class Health : MonoBehaviour, IDamagable
 		damage = Mathf.Max(0, damage);
 		CurrentHealth -= damage;
 
-		Changed?.Invoke(-damage, _maxHealth);
+		Changed?.Invoke(CurrentHealth, _maxHealth);
 	}
 
 	public void Heal(int health)
@@ -32,6 +32,6 @@ public class Health : MonoBehaviour, IDamagable
 		health = Mathf.Max(0, health);
 		CurrentHealth += health;
 
-		Changed?.Invoke(health, _maxHealth);
+		Changed?.Invoke(CurrentHealth, _maxHealth);
 	}
 }

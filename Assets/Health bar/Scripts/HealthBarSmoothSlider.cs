@@ -31,9 +31,7 @@ public class HealthBarSmoothSlider : HealthBar
 		if (maxValue <= 0)
 			return;
 
-		value = GetNormalizedFactor(value, maxValue);
-
-		RealValue += value;
+		RealValue = GetNormalizedFactor(value, maxValue);
 
 		if (_smoothChangeCoroutine != null)
 		{

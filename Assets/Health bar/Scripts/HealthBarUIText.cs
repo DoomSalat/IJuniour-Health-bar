@@ -21,11 +21,11 @@ public class HealthBarUIText : HealthBar
 
 	protected override void Change(float value, float maxValue)
 	{
-		if (_maxValue <= 0)
+		if (maxValue <= 0)
 			return;
 
 		_maxValue = maxValue;
-		CurrentValue += value;
+		CurrentValue = value;
 
 		_textUI.text = $"{CurrentValue}/{_maxValue}";
 	}

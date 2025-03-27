@@ -19,7 +19,6 @@ public class HealthBarSlider : HealthBar
 		if (maxValue <= 0)
 			return;
 
-		value = GetNormalizedFactor(value, maxValue);
-		_slider.value += value;
+		_slider.value = GetNormalizedFactor(value, maxValue);
 	}
 }

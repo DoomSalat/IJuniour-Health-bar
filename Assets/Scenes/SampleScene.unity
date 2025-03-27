@@ -139,9 +139,25 @@ PrefabInstance:
       propertyPath: _healthChanger
       value: 
       objectReference: {fileID: 1572299737}
+    - target: {fileID: 4144376160287051807, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144376160287051807, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4144376160287051807, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4515608105484468098, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
       propertyPath: m_Name
       value: Canvas Health bar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4515608105484468098, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5875844641925282687, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
       propertyPath: m_AnchorMax.x
@@ -655,6 +671,7 @@ GameObject:
   - component: {fileID: 1053993648}
   - component: {fileID: 1053993647}
   - component: {fileID: 1053993646}
+  - component: {fileID: 1053993649}
   m_Layer: 5
   m_Name: Button Damage
   m_TagString: Untagged
@@ -725,19 +742,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1053993647}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1572299737}
-        m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1053993647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -776,6 +781,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053993644}
   m_CullTransparentMesh: 1
+--- !u!114 &1053993649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053993644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8cccdffc8ac1340b8a816236186295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1572299737}
+  _value: 7
+  _isHeal: 0
 --- !u!1 &1100289682
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +808,7 @@ GameObject:
   - component: {fileID: 1100289686}
   - component: {fileID: 1100289685}
   - component: {fileID: 1100289684}
+  - component: {fileID: 1100289687}
   m_Layer: 5
   m_Name: Button Heal
   m_TagString: Untagged
@@ -858,19 +879,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1100289685}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1572299737}
-        m_TargetAssemblyTypeName: HealthChanger, Assembly-CSharp
-        m_MethodName: Change
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 5
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1100289685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +918,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100289682}
   m_CullTransparentMesh: 1
+--- !u!114 &1100289687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100289682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac8cccdffc8ac1340b8a816236186295, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: {fileID: 1572299737}
+  _value: 7
+  _isHeal: 1
 --- !u!1 &1296539032
 GameObject:
   m_ObjectHideFlags: 0
