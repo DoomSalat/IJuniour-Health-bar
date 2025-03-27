@@ -132,6 +132,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1572299737}
     - target: {fileID: 2945419000660152748, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: _health
+      value: 
+      objectReference: {fileID: 1572299737}
+    - target: {fileID: 2945419000660152748, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
       propertyPath: _healthChanger
       value: 
       objectReference: {fileID: 1572299737}
@@ -261,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c184d1f6209255047b7e2f7bd7c72404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthChanger: {fileID: 1572299737}
+  _health: {fileID: 1572299737}
   _smoothSpeed: 3
 --- !u!1 &456706392
 GameObject:
@@ -1146,7 +1150,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1572299736}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f71f74e52c0f34e4f822308dc85f9e7d, type: 3}
+  m_Script: {fileID: 11500000, guid: 6ed629c88ed131147a24c14a21ea089e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHealth: 100
@@ -1174,7 +1178,15 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 164360736947662395, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: _health
+      value: 
+      objectReference: {fileID: 1572299737}
+    - target: {fileID: 164360736947662395, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
       propertyPath: _healthChanger
+      value: 
+      objectReference: {fileID: 1572299737}
+    - target: {fileID: 2945419000660152748, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}
+      propertyPath: _health
       value: 
       objectReference: {fileID: 1572299737}
     - target: {fileID: 2945419000660152748, guid: 55cc337d30dc53344b78e917bae284f9, type: 3}

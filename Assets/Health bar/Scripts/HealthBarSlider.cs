@@ -4,21 +4,22 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Slider))]
 public class HealthBarSlider : HealthBar
 {
+	private const float MaxViewNumber = 1;
+
 	private Slider _slider;
 
 	private void Awake()
 	{
 		_slider = GetComponent<Slider>();
+		_slider.maxValue = MaxViewNumber;
 	}
 
-	protected override void Initializate(float value)
+	protected override void Change(float value, float maxValue)
 	{
-		_slider.maxValue = value;
-		_slider.value = value;
-	}
+		if (maxValue <= 0)
+			return;
 
-	protected override void Change(float value)
-	{
+		value = GetNormalizedFactor(value, maxValue);
 		_slider.value += value;
 	}
 }

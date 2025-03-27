@@ -5,32 +5,34 @@ using System.Collections;
 [RequireComponent(typeof(Slider))]
 public class HealthBarSmoothSlider : HealthBar
 {
+	private const float MaxViewNumber = 1;
+	private const float EndProgress = 1;
+
 	[SerializeField][Min(0)] private float _smoothSpeed = 5f;
-	private float _realValue;
 
 	private Slider _slider;
 	private Coroutine _smoothChangeCoroutine;
+	private float _realValue = MaxViewNumber;
 
 	private float RealValue
 	{
 		get { return _realValue; }
-		set { _realValue = Mathf.Clamp(value, 0, _slider.maxValue); }
+		set { _realValue = Mathf.Clamp01(value); }
 	}
 
 	private void Awake()
 	{
 		_slider = GetComponent<Slider>();
+		_slider.maxValue = MaxViewNumber;
 	}
 
-	protected override void Initializate(float value)
+	protected override void Change(float value, float maxValue)
 	{
-		_slider.maxValue = value;
-		_slider.value = value;
-		RealValue = value;
-	}
+		if (maxValue <= 0)
+			return;
 
-	protected override void Change(float value)
-	{
+		value = GetNormalizedFactor(value, maxValue);
+
 		RealValue += value;
 
 		if (_smoothChangeCoroutine != null)
@@ -46,7 +48,7 @@ public class HealthBarSmoothSlider : HealthBar
 		float startValue = _slider.value;
 		float progress = 0f;
 
-		while (progress < 1f)
+		while (progress < EndProgress)
 		{
 			progress += Time.deltaTime * _smoothSpeed;
 			_slider.value = Mathf.Lerp(startValue, targetValue, progress);

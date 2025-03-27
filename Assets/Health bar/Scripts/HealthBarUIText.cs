@@ -19,14 +19,12 @@ public class HealthBarUIText : HealthBar
 		_textUI = GetComponent<TextMeshProUGUI>();
 	}
 
-	protected override void Initializate(float value)
+	protected override void Change(float value, float maxValue)
 	{
-		_maxValue = value;
-		_currentValue = value;
-	}
+		if (_maxValue <= 0)
+			return;
 
-	protected override void Change(float value)
-	{
+		_maxValue = maxValue;
 		CurrentValue += value;
 
 		_textUI.text = $"{CurrentValue}/{_maxValue}";
